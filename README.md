@@ -1,1 +1,2 @@
-# app-settings-reader
+A plugin to access the preference tags (settings) in config.xml
+
