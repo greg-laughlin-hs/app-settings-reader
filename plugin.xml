@@ -10,7 +10,7 @@
     <license>Apache 2.0</license>
     <keywords>cordova,settings,appsettings</keywords>
 
-    <js-module src="www/appsettings.js" name="appsettings" />
+    <js-module src="www/appsettings.js" name="appsettings" >
         <clobbers target="window.AppSettingsReader"/>
     </js-module>
 
