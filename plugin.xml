@@ -11,6 +11,8 @@
     <keywords>cordova,settings,appsettings</keywords>
 
     <js-module src="www/appsettings.js" name="appsettings" />
+        <clobbers target="window.AppSettingsReader"/>
+    </js-module>
 
   <!-- android -->
   <platform name="android">
@@ -22,7 +24,7 @@
       <preference name="CouchdbPrivateUrl" value="http://172.23.188.139:5900" />
       <preference name="TestSha" value="shashashasha" />
     </config-file>
-    
+
     <source-file src="src/android/AppSettings.java" target-dir="src/org/apache/cordova/appsettings" />
   </platform>
 
@@ -36,9 +38,9 @@
       <preference name="CouchdbPrivateUrl" value="http://172.23.188.139/:5900" />
       <preference name="TestSha" value="shashashasha" />
     </config-file>
-    
+
     <header-file src="src/ios/AppSettings.h" />
     <source-file src="src/ios/AppSettings.m" />
   </platform>
-  
+
 </plugin>
