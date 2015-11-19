@@ -1,6 +1,6 @@
 
-var argscheck = require('cordova/argscheck'),
-    exec = require('cordova/exec');
+
+var exec = require('cordova/exec');
 
 function AppSettings() {
 
@@ -12,10 +12,8 @@ function AppSettings() {
  * @param {Function} errorCallback The function to call when value is unavailable
  * @param {String} key Key
  */
-AppSettings.prototype.get = function (successCallback, errorCallback, keyArray) {
-    argscheck.checkArgs('fFa', 'AppSettings.get', arguments);
-
-    exec (successCallback, errorCallback, "AppSettings", "get", keyArray);
+AppSettings.prototype.fetch = function (successCallback, errorCallback) {
+    exec(successCallback, errorCallback, "AppSettings", "fetch");
 };
 
 module.exports = new AppSettings();

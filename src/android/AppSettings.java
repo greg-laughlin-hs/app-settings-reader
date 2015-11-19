@@ -17,7 +17,7 @@ public class AppSettings extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         JSONObject options = new JSONObject();
-        if (action.equals("get")) {
+        if (action.equals("fetch")) {
             try{
                 for(int i=0;i<args.length();i++){
                     String key=args.getString(i);
