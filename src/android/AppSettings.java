@@ -19,15 +19,13 @@ public class AppSettings extends CordovaPlugin {
         JSONObject options = new JSONObject();
         if (action.equals("fetch")) {
             try{
-                for(int i=0;i<args.length();i++){
-                    String key=args.getString(i);
-                    PackageManager pm = cordova.getActivity().getApplication().getPackageManager();
-                    String packageName = cordova.getActivity().getApplication().getPackageName();
-                    ApplicationInfo appInfo = pm.getApplicationInfo(packageName, pm.GET_META_DATA);
-                    String keyvalue = appInfo.metaData.getString(key);
-                    if (keyvalue != null) {
-                        options.put(key, keyvalue);
-                    }
+
+                PackageManager pm = cordova.getActivity().getApplication().getPackageManager();
+                String packageName = cordova.getActivity().getApplication().getPackageName();
+                ApplicationInfo appInfo = pm.getApplicationInfo(packageName, pm.GET_META_DATA);
+
+                for (String key : appInfo.metaData.keySet()) {
+                    options.put(key, appInfo.metaData.getString(key));
                 }
                 callbackContext.success(options);
             } catch (Exception ex) {
