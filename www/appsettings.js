@@ -13,7 +13,7 @@ function AppSettings() {
  * @param {String} key Key
  */
 AppSettings.prototype.fetch = function (successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "AppSettings", "fetch");
+    exec(successCallback, errorCallback, "AppSettings", "fetch", []);
 };
 
 module.exports = new AppSettings();
