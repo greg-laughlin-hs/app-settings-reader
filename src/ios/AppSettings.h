@@ -1,13 +1,13 @@
 //
 //  AppPreferences.h
-//  
+//
 //
 
 #import <Cordova/CDV.h>
 #import <Cordova/CDVViewController.h>
 
-@interface AppSettings : CDVPlugin 
+@interface AppSettings : CDVPlugin
 
-- (void)get:(CDVInvokedUrlCommand*)command;
+- (void)fetch:(CDVInvokedUrlCommand*)command;
 
 @end
